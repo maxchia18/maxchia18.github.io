@@ -10,7 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- SwiperCSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <title>Max Chia</title>
 </head>
 
@@ -18,7 +18,7 @@
     <!-- Header -->
     <header class="header" id="header ">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Max Chia</a>
+            <a href="#" class="nav__logo">Max Chia Rui En</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
@@ -32,8 +32,8 @@
                         </a>
                     </li>
                     <li class="nav__item">
-                        <a href="#education" class="nav__link">
-                            <i class="uil uil-book-alt nav__icon"></i> Education
+                        <a href="#qualification" class="nav__link">
+                            <i class="uil uil-book-alt nav__icon"></i> Qualification
                         </a>
                     </li>
 
@@ -102,7 +102,7 @@
                         </svg>
                     </div>
                     <div class="home__data">
-                        <h1 class="home__title">Hi, I'm Max Chia Rui En</h1>
+                        <h1 class="home__title">Hi, I'm Max</h1>
                         <h3 class="home__subtitle">Software Engineering Student</h3>
                         <p class="home__description">Currently pursuing my degree at University Malaysia Sarawak
                             (UNIMAS).</p>
@@ -126,7 +126,7 @@
         <!-- About -->
         <section class="about section" id="about">
             <h2 class="section__title">About Me</h2>
-            <spna class="section__subtitle">My Introduction</spna>
+            <span class="section__subtitle">My Introduction</span>
             <div class="about__container container grid">
                 <div class="about__data">
                     <p class="about__description">
@@ -149,10 +149,314 @@
                         </div>
 
                     </div>
+
+                    <div class="about__buttons">
+                        <a href="#contact" class="button button--flex">
+                            Contact Me <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Qualification -->
+        <section class="qualification section" id="qualification">
+            <h2 class="section__title">Qualification</h2>
+            <span class="section__subtitle">My Journey</span>
+
+            <div class="qualification__container container">
+                <div class="qualification__tabs">
+                    <div class="qualification__button button--flex qualification__active" data-target="#education">
+                        <i class="uil uil-graduation-cap qualification__icon"></i>
+                        Education
+                    </div>
+
+                    <div class="qualification__button button--flex" data-target="#work">
+                        <i class="uil uil-briefcase-alt qualification__icon"></i>
+                        Work
+                    </div>
+                </div>
+
+                <div class="qualification__sections">
+                    <!-- Education Content  -->
+                    <div class="qualification__content qualification__active" data-content id="education">
+                        <!-- E1 -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Software Engineering</h3>
+                                <span class="qualifaction__subtitle">University Malaysia Sarawak</span>
+                                <div class="qualification__calender">
+                                    2020 - Ongoing
+                                </div>
+                                <div class="qualification__pointer">
+                                    CGPA: 3.96
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+                        <!-- E2 -->
+                        <div class="qualification__data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__title">STPM</h3>
+                                <span class="qualifaction__subtitle">SMK Mentakab</span>
+                                <div class="qualification__calender">
+                                    2018 - 2019
+                                </div>
+                                <div class="qualification__pointer">
+                                    CGPA: 3.17
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Work Content  -->
+                    <div class="qualification__content" data-content id="work">
+                        <!-- W1 -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Croupier</h3>
+                                <span class="qualifaction__subtitle">Genting Skyworld Casino</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calender-alt"></i>
+                                    2019 - 2020
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+                        <!-- E2 -->
+                        <div class="qualification__data">
+                            <div></div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__title">Waiter</h3>
+                                <span class="qualifaction__subtitle">Local Restaurant</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calender-alt"></i>
+                                    2018 - 2020
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">My Skills</span>
+
+            <div class="skills__container container grid">
+                <div>
+                    <!-- Skill 1 -->
+                    <div class="skills__content skills__open">
+                        <div class="skills__header">
+                            <i class="uil uil-server-network skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Web Development</h1>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">HTML</h3>
+                                    <span class="skills_number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">CSS</h3>
+                                    <span class="skills_number">65%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__css"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">JavaScript</h3>
+                                    <span class="skills_number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">php</h3>
+                                    <span class="skills_number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__php"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">SQL</h3>
+                                    <span class="skills_number">65%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__sql"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-brackets-curly skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Static-typed Language</h1>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">C++</h3>
+                                    <span class="skills_number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__cpp"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">C</h3>
+                                    <span class="skills_number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__c"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Java</h3>
+                                    <span class="skills_number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__java"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-keyboard skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Dynamic-typed Language</h1>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Python</h3>
+                                    <span class="skills_number">50%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__python"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-swatchbook skills__icon"></i>
+                            <div>
+                                <h1 class="skills__title">Other Knowledge</h1>
+                            </div>
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Object-oriented Programming</h3>
+                                    <span class="skills_number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__oop"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Software Requirement Engineering</h3>
+                                    <span class="skills_number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__sre"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Data Structure & Algorithm</h3>
+                                    <span class="skills_number">65%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__dsa"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity -->
+        <section class="activity section" id="activity">
+            <h2 class="section__title">Avtivity</h2>
+            <span class="section__subtitle">My Experience</span>
+            <div class="activity__container container swiper swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Activity 1 -->
+                    <div class="activity__content grid swiper-slide">
+                        <img src="assets/img/gcp.jpg" alt="" class="activity__img">
+                        <div class="activity__data">
+                            <h3 class="activity__title">#GCPBoleh 2022</h3>
+                            <p class="activity__description">#GCPBoleh is an online self-study program that provides
+                                developers in Malaysia with access to hands-on Google Cloud labs while learning
+                                alongside a supportive community of peers.</p>
+                            <a href="https://www.cloudskillsboost.google/public_profiles/740da246-7662-46f5-9e30-acd9154bb03b?fbclid=IwAR3uh5hm3u_VwuyZ2ULaTzWJzjt2BX7sOjxN7jBs5NBnoNUPYJRCtsYGyRQ"
+                                target="_blank" class="button button--flex button--small activity__button">
+                                GCP Profile <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -160,7 +464,7 @@
     <!-- Scroll Top -->
 
     <!-- SwiperJS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>

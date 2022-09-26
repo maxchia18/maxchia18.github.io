@@ -14,7 +14,7 @@ if (navToggle) {
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
 if (navClose) {
-    navClose.addEventListener('click', () =>{
+    navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu')
     })
 }
@@ -22,32 +22,78 @@ if (navClose) {
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
-function linkAction(){
+function linkAction() {
     navMenu.classList.remove('show-menu')
 }
-navLink.forEach(n => n.addEventListener('click',linkAction))
+navLink.forEach(n => n.addEventListener('click', linkAction))
 
 // Copy Email to Clipboard
-const emailIcon = document.getElementById('email-icon') 
+const emailIcon = document.getElementById('email-icon')
 
-if(emailIcon) {
+if (emailIcon) {
     emailIcon.addEventListener('click', () => {
         var email = "maxchia926@gmail.com";
         navigator.clipboard.writeText(email);
-        alert("Email: "+email+" copied!");
+        alert("Email: " + email + " copied!");
     })
 }
 
-/*==================== ACCORDION SKILLS ====================*/
+/*==================== SHOW/HIDE SKILLS ====================*/
+const skillsContent = document.getElementsByClassName('skills__content'),
+    skillsHeader = document.querySelectorAll('.skills__header')
+
+function toggleSkills() {
+    let itemClass = this.parentNode.className
+
+    for (i = 0; i < skillsContent.length; i++) {
+        skillsContent[i].className = 'skills__content skills__close'
+    }
+    if (itemClass === 'skills__content skills__close') {
+        this.parentNode.className = 'skills__content skills__open'
+    }
+}
+
+skillsHeader.forEach((el) => {
+    el.addEventListener('click', toggleSkills);
+})
 
 
 /*==================== QUALIFICATION TABS ====================*/
+const tabs = document.querySelectorAll('[data-target]'),
+    tabContents = document.querySelectorAll('[data-content]')
 
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target)
 
-/*==================== SERVICES MODAL ====================*/
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification__active')
+        })
+        target.classList.add('qualification__active')
 
+        tabs.forEach(tab => {
+            tab.classList.remove('qualification__active')
+        })
+        tab.classList.add('qualification__active')
+    })
+})
 
-/*==================== PORTFOLIO SWIPER  ====================*/
+/*==================== ACTIVITY SWIPER  ====================*/
+let swiper = new Swiper(".activity__container", {
+    cssMode: true,
+    loop:true, 
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    mousewheel: true,
+    keyboard: true,
+});
 
 
 /*==================== TESTIMONIAL ====================*/

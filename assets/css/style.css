@@ -134,6 +134,11 @@ img {
   text-align: center;
 }
 
+.email-icon:hover {
+  cursor: pointer;
+}
+
+
 /*==================== LAYOUT ====================*/
 .container {
   max-width: 768px;
@@ -183,6 +188,10 @@ img {
 }
 
 @media screen and (max-width: 767px) {
+  .header {
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+  }
+
   .nav__menu {
     position: fixed;
     bottom: -100%;
@@ -547,7 +556,7 @@ img {
 }
 
 /*==================== ACTIVITY ====================*/
-.activity__container {
+.activity__container, .project__container {
   overflow: initial;
 }
 
@@ -556,17 +565,18 @@ img {
 }
 
 .activity__img {
-  width: 265px;
+  width: 320px;
   border-radius: .5rem;
   justify-self: center;
+  border: 2px solid var(--first-color)
 }
 
-.activity__title {
+.activity__title, .project__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
 }
 
-.activity__description {
+.activity__description, .project__description {
   margin-bottom: var(--mb-0-75);
 }
 
@@ -574,50 +584,156 @@ img {
   transform: translateX(.25rem);
 }
 
-.swiper-button-prev::after, .swiper-button-next::after {
+/* Swiper */
+.activity__container .swiper-button-prev::after,
+.activity__container .swiper-button-next::after {
   content: '';
 }
 
-.swiper-activity-icon {
-  font-size: 2rem;
+.activity__container .swiper-button-prev,
+.activity__container .swiper-button-next {
+  width: initial;
+  height: initial;
+  margin: initial;
+  font-size: 2.5rem;
   color: var(--first-color);
 }
 
-.swiper-button-prev {
-  left: -.5rem;
+.activity__container .swiper-button-prev {
+  left: -.3rem;
+  top: 4.5rem;
 }
 
-.swiper-button-next {
-  right: -.5rem;
+.activity__container .swiper-button-next {
+  right: -.3rem;
+  top: 4.5rem;
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullet {
-  bottom: -2.5rem;
+.activity__container .swiper-slide {
+  margin-bottom: 4.5rem;
 }
 
-.swiper-pagination-bullet-active {
+.activity__container .swiper-pagination-bullets {
+  bottom: 0;
+}
+
+.activity__container .swiper-pagination-bullet {
+  background-color: var(--first-color-lighter);
+  opacity: initial;
+}
+
+
+.activity__container .swiper-pagination-bullet-active {
   background-color: var(--first-color);
-}
-
-.swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet {
-  outline: none;
+  opacity: initial;
 }
 
 
-/* Active Modal */
+/*==================== PROJECT ====================*/
+.project__container {
+  width: 90%;
+}
+
+.project__data {
+  justify-content: space-between;
+  margin-bottom: var(--mb-1);
+  text-align: center;
+}
+
+.project__img {
+  width: 320px;
+  border-radius: .5rem;
+  margin-right: var(--mb-0-75);
+  border: 2px solid var(--first-color);
+  justify-self: center;
+}
 
 
-/*==================== PORTFOLIO ====================*/
+/* Project Swiper */
+.project__container .swiper-slide {
+  margin-bottom: 4rem;
+}
 
+.project__container .swiper-button-prev::after,
+.project__container .swiper-button-next::after {
+  content: '';
+}
 
-/*==================== PROJECT IN MIND ====================*/
+.project__container .swiper-button-next,
+.project__container .swiper-button-prev {
+  font-size: 2rem;
+  color: var(--title-color);
+  width: initial;
+  height: initial;
+  top: initial;
+  bottom: .5rem;
+}
 
+.project__container .swiper-button-prev {
+  left: calc(50%-3rem);
+}
 
-/*==================== TESTIMONIAL ====================*/
+.project__container .swiper-button-next {
+  right: calc(50%-3rem);
+}
 
+.project__container .swiper-button-disabled {
+  opacity: initial;
+  color: var(--text-color-light);
+}
 
 /*==================== CONTACT ME ====================*/
+.contact__container {
+  row-gap: 3rem;
+}
 
+.contact__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact__info {
+  display: flex;
+  margin-bottom: var(--mb-0-5);
+}
+
+.contact__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+
+.contact__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.contact__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact__content {
+  background-color: var(--input-color);
+  border-radius: .5rem;
+  padding: .75rem 1rem .25rem;
+}
+
+.contact__label {
+  font-size: var(--smaller-font-size);
+  color:var(--title-color);
+}
+
+.contact__input {
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  border: none;
+  outline: none;
+  padding: .25rem .5rem .5rem 0;
+}
 
 /*==================== FOOTER ====================*/
 

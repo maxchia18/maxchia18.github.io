@@ -28,15 +28,14 @@ function linkAction() {
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 // Copy Email to Clipboard
-const emailIcon = document.getElementById('email-icon')
+const emailIcon = document.querySelectorAll('.email-icon')
 
-if (emailIcon) {
-    emailIcon.addEventListener('click', () => {
-        var email = "maxchia926@gmail.com";
-        navigator.clipboard.writeText(email);
-        alert("Email: " + email + " copied!");
-    })
+function copyEmail() {
+    var email = "maxchia926@gmail.com";
+    navigator.clipboard.writeText(email);
+    alert(email + " copied!");
 }
+emailIcon.forEach(n => n.addEventListener('click', copyEmail))
 
 /*==================== SHOW/HIDE SKILLS ====================*/
 const skillsContent = document.getElementsByClassName('skills__content'),
@@ -79,25 +78,33 @@ tabs.forEach(tab => {
 })
 
 /*==================== ACTIVITY SWIPER  ====================*/
-let swiper = new Swiper(".activity__container", {
-    cssMode: true,
-    loop:true, 
+let swiperActivity = new Swiper(".activity__container", {
+    loop: true,
 
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+        dynamicBullets: true,
     },
-    mousewheel: true,
-    keyboard: true,
 });
 
 
-/*==================== TESTIMONIAL ====================*/
+/*==================== PROJECT ====================*/
+let swiperProject = new Swiper(".project__container", {
+    grabCursor: true,
 
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+    }
+
+});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 

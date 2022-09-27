@@ -10,7 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- SwiperCSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <title>Max Chia</title>
 </head>
 
@@ -79,7 +79,7 @@
                         <a href="https://github.com/maxchia18" target="_blank" class="home__social-icon" title="Github">
                             <i class="uil uil-github-alt"></i>
                         </a>
-                        <a href="" class="home__social-icon" id="email-icon">
+                        <a href="" class="home__social-icon email-icon">
                             <i class="uil uil-envelope-alt" title="Copy email"></i>
                         </a>
                     </div>
@@ -434,7 +434,7 @@
         <section class="activity section" id="activity">
             <h2 class="section__title">Avtivity</h2>
             <span class="section__subtitle">My Experience</span>
-            <div class="activity__container container swiper swiper-container">
+            <div class="activity__container container swiper">
                 <div class="swiper-wrapper">
                     <!-- Activity 1 -->
                     <div class="activity__content grid swiper-slide">
@@ -450,13 +450,153 @@
                             </a>
                         </div>
                     </div>
+                    <!-- Activity 2 -->
+                    <div class="activity__content grid swiper-slide">
+                        <img src="assets/img/gcp.jpg" alt="" class="activity__img">
+                        <div class="activity__data">
+                            <h3 class="activity__title">#GCPBoleh 2022</h3>
+                            <p class="activity__description">#GCPBoleh is an online self-study program that provides
+                                developers in Malaysia with access to hands-on Google Cloud labs while learning
+                                alongside a supportive community of peers.</p>
+                            <a href="https://www.cloudskillsboost.google/public_profiles/740da246-7662-46f5-9e30-acd9154bb03b?fbclid=IwAR3uh5hm3u_VwuyZ2ULaTzWJzjt2BX7sOjxN7jBs5NBnoNUPYJRCtsYGyRQ"
+                                target="_blank" class="button button--flex button--small activity__button">
+                                GCP Profile <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Activity 3 -->
+                    <!-- <div class="activity__content grid swiper-slide">
+                        <img src="assets/img/gcp.jpg" alt="" class="activity__img">
+                        <div class="activity__data">
+                            <h3 class="activity__title">#GCPBoleh 2022</h3>
+                            <p class="activity__description">#GCPBoleh is an online self-study program that provides
+                                developers in Malaysia with access to hands-on Google Cloud labs while learning
+                                alongside a supportive community of peers.</p>
+                            <a href="https://www.cloudskillsboost.google/public_profiles/740da246-7662-46f5-9e30-acd9154bb03b?fbclid=IwAR3uh5hm3u_VwuyZ2ULaTzWJzjt2BX7sOjxN7jBs5NBnoNUPYJRCtsYGyRQ"
+                                target="_blank" class="button button--flex button--small activity__button">
+                                GCP Profile <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div> -->
                 </div>
 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-prev">
+                    <div class="uil uil-angle-left-b"></div>
+                </div>
+                <div class="swiper-button-next">
+                    <div class="uil uil-angle-right-b"></div>
+                </div>
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+
+        <!-- Project -->
+        <section class="project section" id="project">
+            <h2 class="section__title">Project</h2>
+            <span class="section__subtitle">My Previous Projects</span>
+
+            <div class="project__container container swiper">
+                <div class="swiper-wrapper">
+                    <!-- Project 1 -->
+                    <div class="project__content grid swiper-slide">
+                        <img src="assets/img/project1.png" alt="" class="project__img">
+                        <div class="project__data">
+                            <div>
+                                <h3 class="project__title">Blood Donation Management</h3>
+                                <p class="project__description">
+                                    A database project represented in web system.
+                                    Perform blood donation management that involves multiple stakeholders such as donor,
+                                    staff and blood donation centre.
+                                </p>
+                                <a href="https://github.com/maxchia18/Database-Project" target="_blank"
+                                    class="button--flex button project__button" title="Github Repository">
+                                    Github
+                                    <i class="uil uil-github button__icon"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <!-- <div class="project__content swiper-slide">
+                        <div class="project__data">
+                            <div class="project__header">
+                                <img src="assets/img/project1.png" alt="" class="project__img">
+                                <div>
+                                    <h3 class="project__name">Blood Donation Management
+                                        <a href="https://github.com/maxchia18/Database-Project" target="_blank"
+                                            class="button--flex" title="Github Repository">
+                                            <i class="uil uil-github button__icon"></i>
+                                        </a>
+                                    </h3>
+                                    <span class="project__description">A database project represented in web system.
+                                        Perform blood donation management that involves stakeholders such as donor,
+                                        staff and blood donation centre. </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="swiper-pagination"></div>
+
+            </div>
+        </section>
+
+        <!-- Contact Me -->
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contact Me</h2>
+            <span class="section__subtitle">Get in touch</span>
+
+            <div class="contact__container container grid">
+                <div class="contact__wrapper">
+                    <div class="contact__info">
+                        <a href="https://wa.me/60109898910" target="_blank"><i class="uil uil-whatsapp contact__icon"
+                                title="Click to chat"></i></a>
+                        <div>
+                            <h3 class="contact__title">Whatsapp</h3>
+                            <span class="contact__subtitle">+60 10-9898910</span>
+                        </div>
+                    </div>
+                    <div class="contact__info">
+                        <i class="uil uil-envelope contact__icon email-icon" title="Copy email"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">maxchia926@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Name</label>
+                            <input type="text" class="contact__input" required placeholder="Your name">
+                        </div>
+                        <div class="contact__content">
+                            <label for="" class="contact__label">Email</label>
+                            <input type="email" class="contact__input" required placeholder="Your email">
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Subject</label>
+                        <input type="text" class="contact__input" required placeholder="Your subject">
+                    </div>
+                    <div class="contact__content">
+                        <label for="" class="contact__label">Message</label>
+                        <textarea name="" id="" cols="0" rows="7" class="contact__input" required placeholder="Your message"></textarea>
+                    </div>
+
+                    <div>
+                        <a href="#" class="button button--flex">
+                            Send Message
+                            <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -464,7 +604,7 @@
     <!-- Scroll Top -->
 
     <!-- SwiperJS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>

@@ -71,7 +71,7 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color-second: hsl(var(--hue-color), 30%, 61%);
+  --first-color-second: hsl(var(--hue-color), 50%, 60%);
   --title-color: hsl(var(--hue-color), 8%, 95%);
   --text-color: hsl(var(--hue-color), 8%, 75%);
   --input-color: hsl(var(--hue-color), 29%, 16%);
@@ -140,6 +140,13 @@ img {
 
 #name {
   color: var(--first-color);
+}
+
+button {
+  border:none;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  width: fit-content;
 }
 
 /*==================== REUSABLE CSS CLASSES ====================*/
@@ -617,29 +624,29 @@ img {
 
 .activity__container .swiper-button-prev,
 .activity__container .swiper-button-next {
-  width: initial;
-  height: initial;
-  margin: initial;
   font-size: 2.5rem;
   color: var(--first-color);
+  width: initial;
+  height: initial;
+  top: initial;
+  bottom: .5rem;
 }
 
 .activity__container .swiper-button-prev {
-  left: -.3rem;
-  top: 4.5rem;
+  left: calc(50%-3rem);
+  
 }
 
 .activity__container .swiper-button-next {
-  right: -.3rem;
-  top: 4.5rem;
+  right: calc(50%-3rem);
 }
 
-.activity__container .swiper-slide {
+.swiper-wrapper {
   margin-bottom: 4.5rem;
 }
 
-.activity__container .swiper-pagination-bullets {
-  bottom: 0;
+.swiper-pagination-bullets {
+  margin-bottom: 1.5rem;
 }
 
 .activity__container .swiper-pagination-bullet {
@@ -688,8 +695,8 @@ img {
 
 .project__container .swiper-button-next,
 .project__container .swiper-button-prev {
-  font-size: 2rem;
-  color: var(--title-color);
+  font-size: 2.5rem;
+  color: var(--first-color);
   width: initial;
   height: initial;
   top: initial;
@@ -706,7 +713,7 @@ img {
 
 .project__container .swiper-button-disabled {
   opacity: initial;
-  color: var(--text-color-light);
+  color: var(--first-color-light);
 }
 
 /*==================== CONTACT ME ====================*/
@@ -733,7 +740,6 @@ img {
 .contact__icon:hover {
   color: var(--first-color-alt);
 }
-
 
 .contact__title {
   font-size: var(--h3-font-size);
@@ -765,6 +771,13 @@ img {
   border: none;
   outline: none;
   padding: .25rem .5rem .5rem 0;
+}
+
+.contact__error {
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: 2.8rem;
+  left: 1.5rem;
 }
 
 /*==================== FOOTER ====================*/
@@ -856,7 +869,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--first-color-lighter);
+  background-color: var(--first-color);
   border-radius: .5rem;
 }
 
@@ -1072,21 +1085,17 @@ img {
     transform: translateX(-6rem);
   }
 
-  .activity__content {
-    column-gap: 5rem;
-  }
-
   .activity__container .swiper-button-next,
   .activity__container .swiper-button-prev {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   } 
 
   .activity__container .swiper-button-next {
-    right: -3.5rem;
+    right: -.5rem;
   }
 
   .activity__container .swiper-button-prev {
-    left: -3.5rem;
+    left: -.5rem;
   }
 
 }

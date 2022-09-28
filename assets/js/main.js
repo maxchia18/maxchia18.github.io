@@ -85,7 +85,33 @@ let swiperActivity = new Swiper(".activity__container", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+        mousewheel: true, 
+    },
+});
 
+
+/*==================== PROJECT SWIPER ====================*/
+let swiperProject = new Swiper(".project__container", {
+    loop: true,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 80,
+        modifier: 1,
+        slideShadows: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -93,33 +119,20 @@ let swiperActivity = new Swiper(".activity__container", {
     },
 });
 
-
-/*==================== PROJECT ====================*/
-let swiperProject = new Swiper(".project__container", {
-    grabCursor: true,
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-    }
-
-});
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
-function scrollActive(){
+function scrollActive() {
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
         sectionId = current.getAttribute('id')
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
+        } else {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
     })
@@ -130,12 +143,12 @@ window.addEventListener('scroll', scrollActive)
 function scrollTop() {
     const scrollTop = document.getElementById('scroll-up');
 
-    if(this.scrollY >= 560) scrollTop.classList.add('show-scroll');
+    if (this.scrollY >= 560) scrollTop.classList.add('show-scroll');
     else scrollTop.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollTop);
 
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== DARK LIGHT THEME ====================*/
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'uil-sun'
@@ -150,9 +163,9 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-mo
 
 // Validate if the user previously chose a theme
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -165,5 +178,44 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+/*==================== emailJS ====================*/
+const contactForm = document.getElementById('contact-form'),
+    contactName = document.getElementById('contact-name'),
+    contactEmail = document.getElementById('contact-email'),
+    contactSubject = document.getElementById('contact-subject'),
+    contactMessage = document.getElementById('contact-message')
 
+const sendEmail = (e) => {
+    e.preventDefault();
+    // serviceID - templateID - #form - publicKey
+    emailjs.sendForm('service_l0onzso','template_m0plumt','#contact-form','Zx7aZX32cu8hTk5mJ') 
+        .then(() => {
+            // show message sent
+            alert('Message sent');
+        }, (error) => {
+            alert('Fail to send, something went wrong\n'+error)
+        });
 
+    // clear input
+    contactName.value = ''; contactEmail.value = '';
+    contactSubject.value = ''; contactMessage.value = '';
+}
+contactForm.addEventListener('submit', sendEmail)
+
+/*==================== Scroll Reveal ====================*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2000,
+})
+
+sr.reveal('.home__data');
+sr.reveal('.home__social', {delay:200,origin:'left'});
+sr.reveal('.home__img', {delay:200,origin:'right'});
+sr.reveal('.home__scroll', {delay:400,interval:100});
+sr.reveal('.about__data', {origin:'bottom'});
+sr.reveal('.qualification__tabs, .qualification__sections',{interval:100})
+sr.reveal('.skills__content:nth-child(odd)',{origin:'left'});
+sr.reveal('.skills__content:nth-child(even)',{origin:'right'});
+sr.reveal('.contact__wrapper',{origin:'top'})
+sr.reveal('.contact__inputs div',{origin:'bottom',interval:100})

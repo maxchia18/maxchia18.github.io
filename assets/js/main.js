@@ -32,8 +32,7 @@ const emailIcon = document.querySelectorAll('.email-icon')
 
 function copyEmail() {
     var email = "maxchia926@gmail.com";
-    navigator.clipboard.writeText(email);
-    alert(email + " copied!");
+    window.open('mailto:' + email);
 }
 emailIcon.forEach(n => n.addEventListener('click', copyEmail))
 
@@ -89,7 +88,7 @@ let swiperActivity = new Swiper(".activity__container", {
         el: ".swiper-pagination",
         clickable: true,
         dynamicBullets: true,
-        mousewheel: true, 
+        mousewheel: true,
     },
 });
 
@@ -188,12 +187,12 @@ const contactForm = document.getElementById('contact-form'),
 const sendEmail = (e) => {
     e.preventDefault();
     // serviceID - templateID - #form - publicKey
-    emailjs.sendForm('service_l0onzso','template_m0plumt','#contact-form','Zx7aZX32cu8hTk5mJ') 
+    emailjs.sendForm('service_l0onzso', 'template_m0plumt', '#contact-form', 'Zx7aZX32cu8hTk5mJ')
         .then(() => {
             // show message sent
             alert('Message sent');
         }, (error) => {
-            alert('Fail to send, something went wrong\n'+error)
+            alert('Fail to send, something went wrong\n' + error)
         });
 
     // clear input
@@ -210,12 +209,12 @@ const sr = ScrollReveal({
 })
 
 sr.reveal('.home__data');
-sr.reveal('.home__social', {delay:200,origin:'left'});
-sr.reveal('.home__img', {delay:200,origin:'right'});
-sr.reveal('.home__scroll', {delay:400,interval:100});
-sr.reveal('.about__data', {origin:'bottom'});
-sr.reveal('.qualification__tabs, .qualification__sections',{interval:100})
-sr.reveal('.skills__content:nth-child(odd)',{origin:'left'});
-sr.reveal('.skills__content:nth-child(even)',{origin:'right'});
-sr.reveal('.contact__wrapper',{origin:'top'})
-sr.reveal('.contact__inputs div',{origin:'bottom',interval:100})
+sr.reveal('.home__social', { delay: 200, origin: 'left' });
+sr.reveal('.home__img', { delay: 200, origin: 'right' });
+sr.reveal('.home__scroll', { delay: 400, interval: 100 });
+sr.reveal('.about__data', { origin: 'bottom' });
+sr.reveal('.qualification__tabs, .qualification__sections', { interval: 100 })
+sr.reveal('.skills__content:nth-child(odd)', { origin: 'left' });
+sr.reveal('.skills__content:nth-child(even)', { origin: 'right' });
+sr.reveal('.contact__wrapper', { origin: 'top' })
+sr.reveal('.contact__inputs div', { origin: 'bottom', interval: 100 })

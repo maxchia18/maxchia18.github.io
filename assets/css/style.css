@@ -598,6 +598,7 @@ button {
 
 .activity__img {
   width: 320px;
+  height: 200px;
   border-radius: .5rem;
   justify-self: center;
   border: 3px solid var(--first-color)

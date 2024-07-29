@@ -31,7 +31,7 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 const emailIcon = document.querySelectorAll('.email-icon')
 
 function copyEmail() {
-    var email = "maxchia926@gmail.com";
+    var email = "maxchia.ruien@gmail.com";
     window.open('mailto:' + email);
 }
 emailIcon.forEach(n => n.addEventListener('click', copyEmail))

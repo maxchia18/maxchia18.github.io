@@ -1184,28 +1184,49 @@ button {
 .unzip__stages {
   display: flex;
   flex-direction: column;
-  gap: .35rem;
 }
 
 .unzip__stage {
+  position: relative;
   display: flex;
   align-items: center;
   gap: .6rem;
+  min-height: 2.4rem;
   font-size: var(--small-font-size);
   color: var(--text-color-light);
   transition: color .3s;
 }
 
+/* Connecting line between consecutive checkpoints (vertical stepper). */
+.unzip__stage:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(.6rem - 1px);
+  top: 50%;
+  height: 100%;
+  width: 2px;
+  background-color: var(--input-color);
+  z-index: 0;
+}
+.unzip__stage.done:not(:last-child)::after { background-color: var(--first-color); }
+.unzip__stage.error:not(:last-child)::after { background-color: #ef4444; }
+
 .unzip__stage-icon {
+  position: relative;
+  z-index: 1;
   width: 1.2rem;
-  text-align: center;
+  height: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--container-color);
   color: var(--text-color-light);
 }
 
 .unzip__stage.active { color: var(--title-color); }
 .unzip__stage.active .unzip__stage-icon {
   color: var(--first-color);
-  display: inline-block;
   animation: unzip-spin 1s linear infinite;
 }
 .unzip__stage.done { color: var(--text-color); }
@@ -1320,5 +1341,17 @@ button {
 @media screen and (min-width: 968px) {
   .unzip__results {
     grid-template-columns: 300px 1fr;
+    align-items: stretch;
   }
+
+  /* Fixed, equal-height panes so loading the image doesn't resize them. */
+  .unzip__pane { height: 34rem; }
+
+  .unzip__progress { display: flex; flex-direction: column; }
+  .unzip__progress .unzip__stages { flex: 1 1 auto; }
+  .unzip__progress .unzip__stage { flex: 1 1 0; }
+
+  .unzip__solution { height: 34rem; }
+  .unzip__canvas-wrap { flex: 1 1 auto; min-height: 0; }
+  #unzip-canvas { max-height: 100%; }
 }

@@ -1205,7 +1205,8 @@ button {
   top: 50%;
   height: 100%;
   width: 2px;
-  background-color: var(--input-color);
+  /* Subtle line visible on both light and dark pane backgrounds. */
+  background-color: hsla(var(--hue-color), 10%, 50%, .3);
   z-index: 0;
 }
 .unzip__stage.done:not(:last-child)::after { background-color: var(--first-color); }

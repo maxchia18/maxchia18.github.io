@@ -73,10 +73,13 @@
       setStage(3, 'active'); await nextFrame();
       const path = solveZip(puzzle.rows, puzzle.cols, puzzle.numbers, puzzle.walls);
       if (!path) {
+        const nums = [...puzzle.numbers.keys()].sort((a, b) => a - b).join(', ');
+        const hint = !conf.ok
+          ? ` It looks like some numbers weren't read correctly (${conf.reason}).`
+          : '';
         throw new Error(
-          `No solution found (read as ${puzzle.rows}×${puzzle.cols}, numbers ` +
-          `${[...puzzle.numbers.keys()].sort((a, b) => a - b).join(',')}). ` +
-          `Try a sharper, straight-on screenshot.`
+          `No solution found — read as a ${puzzle.rows}×${puzzle.cols} grid with ` +
+          `numbers ${nums || '(none)'}.${hint} Try a sharper, straight-on screenshot.`
         );
       }
       setStage(3, 'done');

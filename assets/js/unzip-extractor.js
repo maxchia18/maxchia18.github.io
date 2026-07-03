@@ -351,8 +351,8 @@ function extractPuzzle(source) {
   const region = findGridRegion(gray, W, H);
   if (!region) {
     throw new Error(
-      "Couldn't find a Zip puzzle grid in this image. Make sure the whole " +
-      'board (all rows and columns) is visible and not cut off, then try again.'
+      "Couldn't find a Zip puzzle in this image. Try cropping the screenshot " +
+      'so just the grid is visible, with all rows and columns showing.'
     );
   }
 
